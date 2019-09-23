@@ -54,9 +54,12 @@ function getNewFileHandle() {
  */
 function readFile(file) {
   // If the new .text() reader is available, use it.
+  console.log("read file");
   if (file.text) {
+    console.log("new text");
     return file.text();
   }
+  console.log("trad_file_read");
   // Otherwise use the traditional file reading technique.
   return _readFileLegacy(file);
 }
